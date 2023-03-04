@@ -1,4 +1,4 @@
-package level0;
+package level0.exam1_9;
 
 /*
  * 문제 이름 : 숫자 비교하기

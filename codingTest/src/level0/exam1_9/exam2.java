@@ -1,4 +1,4 @@
-package level0;
+package level0.exam1_9;
 
 /*
  * 문제 이름 : 두 수의 곱

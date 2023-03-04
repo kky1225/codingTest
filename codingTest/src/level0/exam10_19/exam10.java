@@ -1,4 +1,4 @@
-package level0;
+package level0.exam10_19;
 
 /*
  * 문제 이름 : 짝수의 합
