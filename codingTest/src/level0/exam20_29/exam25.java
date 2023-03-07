@@ -14,7 +14,7 @@ public class exam25 {
 	public int solution(int[] array, int height) {
 		int answer = 0; 
         
-		
+		 
 
         return answer;
     }
