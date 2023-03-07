@@ -12,7 +12,7 @@ public class exam25 {
 
 	// 내 풀이
 	public int solution(int[] array, int height) {
-		int answer = 0;
+		int answer = 0; 
         
 		
 
