@@ -14,14 +14,16 @@ public class exam25 {
 	public int solution(int[] array, int height) {
 		int answer = 0;
         
-		
+		for(int i : array)
+            if(i > height)
+                answer++;
 
         return answer;
     }
 	
 	// 남의 풀이
 	/* public int solution(int[] array, int height) {
-	 * 
+		return (int) Arrays.stream(array).filter(value -> value > height).count();
 	} */
 	
 }
