@@ -12,7 +12,7 @@ public class exam35 {
 
 	// 내 풀이
 	public String solution(String s, int n) {
-		StringBuilder sb = new StringBuilder(); 
+		StringBuilder sb = new StringBuilder();
         
         for(int i=0;i<s.length();i++) {
         	if(s.charAt(i) == ' ') {
