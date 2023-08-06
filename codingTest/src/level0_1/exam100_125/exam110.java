@@ -1,4 +1,4 @@
-package level0_1.exam100_145;
+package level0_1.exam100_125;
 
 /*
  * 문제 이름 : 수열과 구간 쿼리 2

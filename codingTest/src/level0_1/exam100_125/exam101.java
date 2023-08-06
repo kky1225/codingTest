@@ -1,4 +1,4 @@
-package level0_1.exam100_145;
+package level0_1.exam100_125;
 
 /*
  * 문제 이름 : 조건에 맞게 수열 변환하기 2
