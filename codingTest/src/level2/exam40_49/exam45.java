@@ -1,40 +1,55 @@
 package level2.exam40_49;
 
-import java.util.Arrays;
-
 /*
- * 문제 이름 : 땅따먹기
- * URL : https://school.programmers.co.kr/learn/courses/30/lessons/12913
+ * 문제 이름 : 스킬트리
+ * URL : https://school.programmers.co.kr/learn/courses/30/lessons/49993
  * */
 public class exam45 {
 
 	// 내 풀이
-    int solution(int[][] land) {
-        int[][] dp = land.clone();
+    public int solution(String skill, String[] skill_trees) {
+        int answer = 0;
 
-        for (int i = 1; i < dp.length; i++) {
-            dp[i][0] += Math.max(dp[i - 1][1], Math.max(dp[i - 1][2], dp[i - 1][3]));
-            dp[i][1] += Math.max(dp[i - 1][0], Math.max(dp[i - 1][2], dp[i - 1][3]));
-            dp[i][2] += Math.max(dp[i - 1][0], Math.max(dp[i - 1][1], dp[i - 1][3]));
-            dp[i][3] += Math.max(dp[i - 1][0], Math.max(dp[i - 1][1], dp[i - 1][2]));
+        for(String skill_tree : skill_trees) {
+            if(checkSkillTree(skill, skill_tree)) {
+                answer++;
+            }
         }
 
-        return Arrays.stream(dp[dp.length - 1]).max().getAsInt();
+        return answer;
+    }
+
+    public boolean checkSkillTree(String skill, String skill_tree) {
+        int index = 0;
+
+        for(char c : skill_tree.toCharArray()) {
+            if(skill.contains(String.valueOf(c))) {
+                if(skill.charAt(index) == c) {
+                    index++;
+                }else {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 		
 	
 	// 남의 풀이
-	/* int solution(int[][] land) {
+	/* public int solution(String skill, String[] skill_trees) {
+        int answer = 0;
+        ArrayList<String> skillTrees = new ArrayList<String>(Arrays.asList(skill_trees));
+        //ArrayList<String> skillTrees = new ArrayList<String>();
+        Iterator<String> it = skillTrees.iterator();
 
-        for (int i = 1; i < land.length; i++) {
-            for (int j = 0; j < land[0].length; j++) {
-                int max1 = Arrays.stream(land[i-1], 0, j).max().orElse(0);
-                int max2 = Arrays.stream(land[i-1], j+1, land[0].length).max().orElse(0);
-                land[i][j] += Math.max(max1, max2);
+        while (it.hasNext()) {
+            if (skill.indexOf(it.next().replaceAll("[^" + skill + "]", "")) != 0) {
+                it.remove();
             }
         }
-
-        return Arrays.stream(land[land.length-1]).max().getAsInt();
+        answer = skillTrees.size();
+        return answer;
     } */
 
 }
